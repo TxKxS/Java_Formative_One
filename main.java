@@ -3,7 +3,7 @@ public class main {
 
         char menuChoice = menu.menu();
 
-        System.out.println("You chose option " + menuChoice);
+        System.out.println("Option " + menuChoice + " chosen");
 
 
 
