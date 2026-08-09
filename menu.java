@@ -1,8 +1,8 @@
 public class menu {
 
-    //import sanner something, will look it up later
 
-    public int menu () {
+
+    public static int menu () {
 
 
         int menuChoice = 0;
