@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 public class menu {
 
-    public static char menu () {
-
-        Scanner input = new Scanner(System.in);
+    public static char menu (Scanner input) {
 
         String strInput = "";
         char menuChoice = ' ';
@@ -43,7 +41,6 @@ public class menu {
         } while (menuChoice < '1' || menuChoice > '4'); //Will loop until correct input is entered. Each character has unique ascii so should work
 
         //closing and exiting
-        input.close();
         return menuChoice;
 
     }
