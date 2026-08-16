@@ -7,7 +7,7 @@ public class delivery{
 
         System.out.println("Record a Delivery");
 
-        System.out.println("Please enter the following details: ");
+        System.out.println("\nPlease enter the following details: ");
         System.out.print("Member Identifier: ");
         String strMemberId = input.next();
 
