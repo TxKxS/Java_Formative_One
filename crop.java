@@ -1,6 +1,6 @@
 public abstract class crop{
 
-    //template
+    //abstract
     private float fltWeight = 0;
     private char chrGrade = 'Z';
     private String strProduceCode = "None";
