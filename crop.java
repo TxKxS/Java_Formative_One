@@ -1,7 +1,6 @@
-public class crop{
+public abstract class crop{
 
-    //interface
-
+    //template
     private float fltWeight = 0;
     private char chrGrade = 'Z';
     private String strProduceCode = "None";
@@ -57,7 +56,7 @@ public class Potatoes extends crop {
 
     private final int price = 45 // Rs45/Kg
 
-    public class potatoes(float Weight, char Grade, String ProduceCode, String Category) {
+    public class Potatoes(float Weight, char Grade, String ProduceCode, String Category) {
             this.fltWeight = Weight;
             this.chrGrade = Grade;
             this.strProduceCode = ProduceCode;
