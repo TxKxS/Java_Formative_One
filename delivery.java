@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class delivery{
 
@@ -9,6 +10,7 @@ public class delivery{
         int intWeekOfDelivery;
         String strProduceCoce;
 
+        ArrayList<crop> harvest = new ArrayList<>();
 
         System.out.println("Record a Delivery");
 
@@ -85,6 +87,15 @@ public class delivery{
             };
         } while (intQualityScore < 0 || intQualityScore > 100);
 
+        //Find Grade
+        /*
+        switch (score) {
+            case int intQuality when s >= 90 && s <= 100 -> "A";
+            case int s when s >= 80 && s < 90 -> "B";
+            default -> "F";
+        }
+         */
+
 
         //Record week of delivery
         do {
@@ -102,7 +113,32 @@ public class delivery{
             }
         } while (intWeekOfDelivery < 1 || intWeekOfDelivery > 20);
 
-    }
+
+        //Create Object
+        switch (strProduceCoce) {
+            case "MZE":
+
+                harvest.add(new Maize(fltMass, ...))
+
+                break;
+            case "BNS":
+
+
+
+                break;
+            case "POT":
+
+
+                break;
+            case "TEA":
+
+
+                break;
+
+
+
+
+        }
 
     public static boolean memberIDCheck(String MemberID) {
 

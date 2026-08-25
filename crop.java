@@ -16,43 +16,43 @@ public abstract class crop{
             this.intDeliveryWeek = intDeliveryWeek;
     }
 
+    public static int getPrice(){return this.fltPrice;}
 
-
-    public static int getPrice(){
-        return this.fltPrice;
+    public char getGrade(){return this.chrGrade;
     }
 
-    public char getGrade(){
-        return this.chrGrade;
-    }
-
-    public String getProduceCode(){
-        return this.stProduceCode;
+    public String getProduceCode(){return this.stProduceCode;
     }
 
     public String getCategory(){
         return this.strCategory;
     }
 
+    public  int getDeliveryWeek(){return this.intDeliveryWeek; }
+
+    public abstract int getPrice() {return 0;};
+
 }
 
 public class Maize extends crop{
-
-    private final int price = 30; // Rs30/Kg
 
     public class Maize(float Weight, char Grade, String ProduceCode, String Category, int intDeliveryWeek) {
             super(Weight,Grade, ProduceCode,Category, intDeliveryWeek)
     }
 
+    @Override
+    public int getPrice() {return  30;} // Rs30/Kg
+
 }
 
 public class Beans extends crop {
 
-    private final int price = 90; // Rs90/Kg
-
     public class Beans(float Weight, char Grade, String ProduceCode, String Category, int intDeliveryWeek) {
             super(Weight,Grade, ProduceCode,Category, intDeliveryWeek)
     }
+
+    @Override
+    public int getPrice() {return  90;} // Rs90/Kg
 
 }
 
@@ -65,6 +65,9 @@ public class Potatoes extends crop {
     }
 
 
+    @Override
+    public int getPrice() {return  45;} // Rs45/Kg
+
 }
 
 public class GreenTea extends crop {
@@ -75,5 +78,7 @@ public class GreenTea extends crop {
             super(Weight,Grade, ProduceCode,Category, intDeliveryWeek)
     }
 
+    @Override
+    public int getPrice() {return  25;}
 }
 
