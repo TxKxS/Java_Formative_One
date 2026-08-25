@@ -7,6 +7,7 @@ public class delivery{
         float fltMass = 0;
         int intQualityScore = 0;
         int intWeekOfDelivery;
+        String strProduceCoce;
 
 
         System.out.println("Record a Delivery");
@@ -29,8 +30,27 @@ public class delivery{
         String strMemberName = input.next();
 
         //Number Produce Code
-        System.out.print("Produce Code: ");
-        String strProduceCoce = input.next();
+        boolean bolCheck = false
+        do {
+            System.out.print("Produce Code  (MZE/BNS/POT/TEA): ");
+            strProduceCoce = input.next().toUpperCase();
+            switch (strProduceCoce) {
+                case "MZE":
+                    bolCheck  = true;
+                    break;
+                case "BNS":
+                    bolCheck  = true;
+                    break;
+                case "POT":
+                    bolCheck  = true;
+                    break;
+                case "TEA":
+                    bolCheck  = true;
+                    break;
+                default:
+                    System.out.println("Invalid Product Code. Options are 'MZE', 'BNS', 'POT', 'TEA' ");
+            }
+        } while (!bolCheck);
 
         //Record Mass
         do {
@@ -49,6 +69,8 @@ public class delivery{
             }
         } while (fltMass < 0 || fltMass > 5000);
 
+
+        //Record Quality score
         do {
             System.out.print("Quality Score (0-100): ");
             try {
@@ -63,6 +85,8 @@ public class delivery{
             };
         } while (intQualityScore < 0 || intQualityScore > 100);
 
+
+        //Record week of delivery
         do {
             try {
                 System.out.print("Week of Delivery (1-20): ");
