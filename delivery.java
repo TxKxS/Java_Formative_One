@@ -9,6 +9,7 @@ public class delivery{
         int intQualityScore = 0;
         int intWeekOfDelivery;
         String strProduceCoce;
+        char chrGrade = 'Z';
 
         ArrayList<crop> harvest = new ArrayList<>();
 
@@ -29,10 +30,10 @@ public class delivery{
 
         // Record Member Name
         System.out.print("Member Name: ");
-        String strMemberName = input.next();
+        String strMemberName = input.nextLine();
 
         //Number Produce Code
-        boolean bolCheck = false
+        boolean bolCheck = false;
         do {
             System.out.print("Produce Code  (MZE/BNS/POT/TEA): ");
             strProduceCoce = input.next().toUpperCase();
@@ -88,14 +89,16 @@ public class delivery{
         } while (intQualityScore < 0 || intQualityScore > 100);
 
         //Find Grade
-        /*
-        switch (score) {
-            case int intQuality when s >= 90 && s <= 100 -> "A";
-            case int s when s >= 80 && s < 90 -> "B";
-            default -> "F";
+        if (intQualityScore < 50) {
+            chrGrade = 'X';
+            System.out.println("Unexpected error. Invalid Quality Score. Grade has been assigned to 'Z'.");
+        } else if (intQualityScore <= 69) {
+            chrGrade = 'C';
+        } else if (intQualityScore <= 84) {
+            chrGrade = 'B';
+        } else if (intQualityScore <= 100) {
+            chrGrade = 'A';
         }
-         */
-
 
         //Record week of delivery
         do {
@@ -105,7 +108,6 @@ public class delivery{
                 if (intWeekOfDelivery < 1 || intWeekOfDelivery > 20) {
                     System.out.println("Invalid option. Please enter a number between 1 and 20.");
                 }
-                ;
             } catch (Exception e) {
                 System.out.println("Invalid option. Please enter an integer between 1 and 20.");
                 input.next(); //Clearing up the buffer
@@ -114,30 +116,31 @@ public class delivery{
         } while (intWeekOfDelivery < 1 || intWeekOfDelivery > 20);
 
 
-        //Create Object
+        //Creating Object
         switch (strProduceCoce) {
             case "MZE":
 
-                harvest.add(new Maize(fltMass, ...))
-
+                harvest.add(new Maize(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                System.out.println("\nMaize harvest has been recorded.");
                 break;
+
             case "BNS":
 
-
-
+                harvest.add(new Beans(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                System.out.println("\nBean harvest has been recorded.");
                 break;
+
             case "POT":
 
-
+                harvest.add(new Potatoes(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                System.out.println("\nPotato harvest has been recorded.");
                 break;
+
             case "TEA":
 
-
+                harvest.add(new GreenTea(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                System.out.println("\nGreen Tea harvest has been recorded.");
                 break;
-
-
-
-
         }
 
     public static boolean memberIDCheck(String MemberID) {
