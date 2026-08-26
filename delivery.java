@@ -121,25 +121,25 @@ public class delivery{
         switch (strProduceCoce) {
             case "MZE":
 
-                harvest.add(new Maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                harvest.add(new maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nMaize harvest has been recorded.");
                 break;
 
             case "BNS":
 
-                harvest.add(new Beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                harvest.add(new beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nBean harvest has been recorded.");
                 break;
 
             case "POT":
 
-                harvest.add(new Potatoes(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                harvest.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nPotato harvest has been recorded.");
                 break;
 
             case "TEA":
 
-                harvest.add(new GreenTea(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                harvest.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nGreen Tea harvest has been recorded.");
                 break;
         }
