@@ -39,16 +39,16 @@ public class delivery{
             strProduceCoce = input.next().toUpperCase();
             switch (strProduceCoce) {
                 case "MZE":
-                    bolCheck  = true;
+                    bolCheck = true;
                     break;
                 case "BNS":
-                    bolCheck  = true;
+                    bolCheck = true;
                     break;
                 case "POT":
-                    bolCheck  = true;
+                    bolCheck = true;
                     break;
                 case "TEA":
-                    bolCheck  = true;
+                    bolCheck = true;
                     break;
                 default:
                     System.out.println("Invalid Product Code. Options are 'MZE', 'BNS', 'POT', 'TEA' ");
@@ -85,7 +85,8 @@ public class delivery{
                 System.out.println("Invalid Quality Score. Please enter an integer between 0 and 100 inclusive.");
                 input.next(); //Clearing up the buffer to remove the infite loop bug
                 intQualityScore = -1;
-            };
+            }
+            ;
         } while (intQualityScore < 0 || intQualityScore > 100);
 
         //Find Grade
@@ -120,28 +121,29 @@ public class delivery{
         switch (strProduceCoce) {
             case "MZE":
 
-                harvest.add(new Maize(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                harvest.add(new Maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nMaize harvest has been recorded.");
                 break;
 
             case "BNS":
 
-                harvest.add(new Beans(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                harvest.add(new Beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nBean harvest has been recorded.");
                 break;
 
             case "POT":
 
-                harvest.add(new Potatoes(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                harvest.add(new Potatoes(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nPotato harvest has been recorded.");
                 break;
 
             case "TEA":
 
-                harvest.add(new GreenTea(fltMass, chrGrade, strProduceCoce,"Cereal", intWeekOfDelivery));
+                harvest.add(new GreenTea(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nGreen Tea harvest has been recorded.");
                 break;
         }
+    }
 
     public static boolean memberIDCheck(String MemberID) {
 
