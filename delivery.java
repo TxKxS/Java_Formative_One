@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class delivery{
 
@@ -10,8 +9,6 @@ public class delivery{
         int intWeekOfDelivery;
         String strProduceCoce;
         char chrGrade = 'Z';
-
-        ArrayList<crop> harvest = new ArrayList<>();
 
         System.out.println("Record a Delivery");
 
@@ -121,28 +118,30 @@ public class delivery{
         switch (strProduceCoce) {
             case "MZE":
 
-                harvest.add(new maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nMaize harvest has been recorded.");
                 break;
 
             case "BNS":
 
-                harvest.add(new beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nBean harvest has been recorded.");
                 break;
 
             case "POT":
 
-                harvest.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nPotato harvest has been recorded.");
                 break;
 
             case "TEA":
 
-                harvest.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.println("\nGreen Tea harvest has been recorded.");
                 break;
         }
+
+        return;
     }
 
     public static boolean memberIDCheck(String MemberID) {
