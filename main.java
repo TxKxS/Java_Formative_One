@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class main {
+    private static java.lang.Object payment;
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -12,6 +14,7 @@ public class main {
         switch (menuChoice) {
             case '1':
                 delivery.delivery(input);
+                payment.payment();
 
 
                 break;

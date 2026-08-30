@@ -25,6 +25,4 @@ public abstract class crop{
 
     public  int getDeliveryWeek(){return this.intDeliveryWeek; }
 
-    public float getWeight() { return this.fltWeight; }
-
 }

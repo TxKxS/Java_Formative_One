@@ -130,13 +130,13 @@ public class delivery{
 
             case "POT":
 
-                HarvestLog.deliveries.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Perishable", intWeekOfDelivery));
                 System.out.println("\nPotato harvest has been recorded.");
                 break;
 
             case "TEA":
 
-                HarvestLog.deliveries.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cash Crop", intWeekOfDelivery));
                 System.out.println("\nGreen Tea harvest has been recorded.");
                 break;
         }
