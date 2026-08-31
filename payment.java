@@ -71,23 +71,22 @@ public class payment {
 
 
             //Display
-
-
-            System.out.println("Base value        " + dbMass + " x " + intPrice + "        =     " + dbBaseValue);
-            System.out.println("Grade " + enumGrade.getName() + "                   x " + enumGrade.getMultiplier() + "     =     " + dbAfterGrade);
-            System.out.println(categoryName + "                 x " + dbCategoryMultiplier + "     =     " + dbAfterCategory);
-            System.out.println("Commission 5%                        -      " + dbCommission);
-            System.out.println("Transport levy    " + dbMass + " x " + 2.0 + "        -      " + dbTransportFee);
-            System.out.println("NET PAYABLE                          =     " + dbNetPayable + " MUR");
+            System.out.println("Base value        " + dbMass + " x " + intPrice + "        =     " + String.format("%.2f",dbBaseValue));
+            System.out.println("Grade " + enumGrade.getName() + "                   x " + enumGrade.getMultiplier() + "     =     " + String.format("%.2f",dbAfterGrade));
+            System.out.println(categoryName + "                 x " + dbCategoryMultiplier + "     =     " + String.format("%.2f",dbAfterCategory));
+            System.out.println("Commission 5%                        -      " + String.format("%.2f",dbCommission));
+            System.out.println("Transport levy    " + dbMass + " x " + 2.0 + "        -      " + String.format("%.2f",dbTransportFee));
+            System.out.println("NET PAYABLE                          =     " + String.format("%.2f",dbNetPayable) + " MUR");
 
         } else {
             System.out.println("Grase is too low. Payment has been rejected.");
             dbNetPayable = 0.00 ;
+            //Assuming no fees being collected for transport when quality is too low
         }
 
+        HarvestLog.deliveries.get(index).setNetPayableAmount(dbNetPayable);
 
-
-
+        return;
 
     }
 

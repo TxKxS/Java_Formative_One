@@ -119,25 +119,25 @@ public class delivery{
             case "MZE":
 
                 HarvestLog.deliveries.add(new maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
-                System.out.println("\nMaize harvest has been recorded.");
+                System.out.print("\nMaize harvest, ");
                 break;
 
             case "BNS":
 
                 HarvestLog.deliveries.add(new beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
-                System.out.println("\nBean harvest has been recorded.");
+                System.out.print("\nBean harvest, ");
                 break;
 
             case "POT":
 
                 HarvestLog.deliveries.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Perishable", intWeekOfDelivery));
-                System.out.println("\nPotato harvest has been recorded.");
+                System.out.print("\nPotato harvest, ");
                 break;
 
             case "TEA":
 
                 HarvestLog.deliveries.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cash Crop", intWeekOfDelivery));
-                System.out.println("\nGreen Tea harvest has been recorded.");
+                System.out.print("\nGreen Tea harvest, ");
                 break;
         }
 
