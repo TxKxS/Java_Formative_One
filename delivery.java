@@ -22,6 +22,7 @@ public class delivery{
             System.out.println("Invalid Member ID");
             System.out.print("Please enter correct Member Identifier: ");
             strMemberId = input.next();
+            input.nextLine(); //empty lines
         }
 
 

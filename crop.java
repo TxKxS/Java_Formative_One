@@ -19,6 +19,8 @@ public abstract class crop{
 
     public char getGrade(){return this.chrGrade;}
 
+    public float getWeight(){ return this.fltWeight; }
+
     public String getProduceCode(){return this.strProduceCode;}
 
     public String getCategory(){return this.strCategory;}

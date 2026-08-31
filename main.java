@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class main {
-    private static java.lang.Object payment;
-
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
