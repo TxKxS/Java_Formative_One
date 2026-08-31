@@ -90,7 +90,6 @@ public class delivery{
         //Find Grade
         if (intQualityScore < 50) {
             chrGrade = 'X';
-            System.out.println("Unexpected error. Invalid Quality Score. Grade has been assigned to 'Z'.");
         } else if (intQualityScore <= 69) {
             chrGrade = 'C';
         } else if (intQualityScore <= 84) {

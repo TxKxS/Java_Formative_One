@@ -13,60 +13,78 @@ public class payment {
 
         int index = deliveries.size() - 1;
 
-        float fltMass = deliveries.get(index).getWeight();
+        double dbMass = deliveries.get(index).getWeight();
         char chrGrade = deliveries.get(index).getGrade();
         int intPrice = deliveries.get(index).getPrice();
         String strCategory = deliveries.get(index).getCategory();
+        double dbNetPayable; //Net Payable amount
 
         // Convert char grade to enum
         Grade enumGrade = Grade.fromChar(chrGrade);
 
-        // Step 1: base value = weight × price per kg
-        double dbBaseValue = fltMass * intPrice;
+        //As long it has not been rejected
+        if (chrGrade != 'X') {
+
+            // Step 1: base value = weight × price per kg
+            double dbBaseValue = dbMass * intPrice;
 
 
-        // Category multiplier
-        double dbCategoryMultiplier;
-        String categoryName;
+            // Category multiplier
+            double dbCategoryMultiplier;
+            String categoryName;
 
-        // Category Switching for multiplier
-        switch (strCategory) {
-            case "Cereal":
-                dbCategoryMultiplier = 1.00;
-                categoryName = "Cereal";
-                break;
-            case "Perishable":
-                dbCategoryMultiplier = 0.90;
-                categoryName = "Perishable";
-                break;
-            case "Cash Crop":
-                dbCategoryMultiplier = 1.10;
-                categoryName = "Cash Crop";
-                break;
-            default:
-                System.out.println("Invalid category " + strCategory);
-                System.out.print("Please delivery details again. ");
+            // Category Switching for multiplier
+            switch (strCategory) {
+                case "Cereal":
+                    dbCategoryMultiplier = 1.00;
+                    categoryName = "Cereal";
+                    break;
+                case "Perishable":
+                    dbCategoryMultiplier = 0.90;
+                    categoryName = "Perishable";
+                    break;
+                case "Cash Crop":
+                    dbCategoryMultiplier = 1.10;
+                    categoryName = "Cash Crop";
+                    break;
+                default:
+                    System.out.println("Invalid category " + strCategory);
+                    System.out.print("Please delivery details again. ");
 
-                return;
+                    return;
+            }
+
+            // Step 2: after grade
+            double dbAfterGrade = dbBaseValue * enumGrade.getMultiplier();
+
+            // Step 3: after category
+            double dbAfterCategory = dbAfterGrade * dbCategoryMultiplier;
+
+            // Step 4: commission (5%)
+            double dbCommission = dbAfterCategory * 0.05;
+
+            // Step 5: transport fee (2 per kg)
+            double dbTransportFee = dbMass * 2;
+
+            // Net payable
+            dbNetPayable = dbAfterCategory - dbCommission - dbTransportFee;
+
+
+            //Display
+
+
+            System.out.println("Base value        " + dbMass + " x " + intPrice + "        =     " + dbBaseValue);
+            System.out.println("Grade " + enumGrade.getName() + "                   x " + enumGrade.getMultiplier() + "     =     " + dbAfterGrade);
+            System.out.println(categoryName + "                 x " + dbCategoryMultiplier + "     =     " + dbAfterCategory);
+            System.out.println("Commission 5%                        -      " + dbCommission);
+            System.out.println("Transport levy    " + dbMass + " x " + 2.0 + "        -      " + dbTransportFee);
+            System.out.println("NET PAYABLE                          =     " + dbNetPayable + " MUR");
+
+        } else {
+            System.out.println("Grase is too low. Payment has been rejected.");
+            dbNetPayable = 0.00 ;
         }
 
-        // Step 2: after grade
-        double dbAfterGrade = dbBaseValue * enumGrade.getMultiplier();
-
-        // Step 3: after category
-        double dbAfterCategory = dbAfterGrade * dbCategoryMultiplier;
-
-        // Step 4: commission (5%)
-        double dbCommission = dbAfterCategory * 0.05;
-
-        // Step 5: transport fee (2 per kg)
-        double dbTransportFee = fltMass * 2;
-
-        // Net payable
-        double dbNetPayable = dbAfterCategory - dbCommission - dbTransportFee;
-
-
-        System.out.println(dbNetPayable);
 
 
 
