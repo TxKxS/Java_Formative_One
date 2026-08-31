@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class payment {
 
     public static void payment() {
+        //for simplification. Importing global list into local file
         ArrayList<crop> deliveries = HarvestLog.deliveries;
 
         if (deliveries.isEmpty()) {
@@ -25,21 +26,21 @@ public class payment {
 
 
         // Category multiplier
-        float fltCategoryMultiplier;
+        double dbCategoryMultiplier;
         String categoryName;
 
         // Category Switching for multiplier
         switch (strCategory) {
             case "Cereal":
-                fltCategoryMultiplier = 1.00;
+                dbCategoryMultiplier = 1.00;
                 categoryName = "Cereal";
                 break;
             case "Perishable":
-                fltCategoryMultiplier = 0.90;
+                dbCategoryMultiplier = 0.90;
                 categoryName = "Perishable";
                 break;
             case "Cash Crop":
-                fltCategoryMultiplier = 1.10;
+                dbCategoryMultiplier = 1.10;
                 categoryName = "Cash Crop";
                 break;
             default:
@@ -53,7 +54,7 @@ public class payment {
         double dbAfterGrade = dbBaseValue * enumGrade.getMultiplier();
 
         // Step 3: after category
-        double dbAfterCategory = dbAfterGrade * categoryMultiplier;
+        double dbAfterCategory = dbAfterGrade * dbCategoryMultiplier;
 
         // Step 4: commission (5%)
         double dbCommission = dbAfterCategory * 0.05;
@@ -65,6 +66,7 @@ public class payment {
         double dbNetPayable = dbAfterCategory - dbCommission - dbTransportFee;
 
 
+        System.out.println(dbNetPayable);
 
 
 
@@ -76,7 +78,7 @@ public class payment {
         A("A", 1.15),
         B("B", 1.00),
         C("C", 0.85),
-        REJECT("REJECT", 0.00);
+        REJECT("X", 0.00);
 
         private final String name;
         private final double multiplier;
@@ -99,7 +101,7 @@ public class payment {
             if (grade == 'A') return A;
             if (grade == 'B') return B;
             if (grade == 'C') return C;
-            return 'X';
+            return REJECT;
         }
     }
 }

@@ -142,6 +142,9 @@ public class delivery{
                 break;
         }
 
+        int index = HarvestLog.deliveries.size() -1 ;
+        System.out.println(HarvestLog.deliveries.get(index).getDeliveryId() + " has been recorded.");
+
         return;
     }
 
