@@ -4,6 +4,9 @@ public class payment {
 
     public static void payment() {
 
+        //for simplification and code readability
+        ArrayList<crop> deliveries = HarvestLog.deliveries;
+
         //Incase of bugs and trying to access payment whichout any deliveries present or delivery not correctly recorded
         if (deliveries.isEmpty()) {
             System.out.println("No deliveries recorded yet.");

@@ -124,25 +124,25 @@ public class delivery{
 
             case "BNS":
 
-                HarvestLog.deliveries.add(new beans(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new beans(strMemberId, strMemberName ,fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.print("\nBean harvest, ");
                 break;
 
             case "POT":
 
-                HarvestLog.deliveries.add(new potatoes(fltMass, chrGrade, strProduceCoce, "Perishable", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new potatoes(strMemberId, strMemberName ,fltMass, chrGrade, strProduceCoce, "Perishable", intWeekOfDelivery));
                 System.out.print("\nPotato harvest, ");
                 break;
 
             case "TEA":
 
-                HarvestLog.deliveries.add(new greenTea(fltMass, chrGrade, strProduceCoce, "Cash Crop", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new greenTea(strMemberId, strMemberName ,fltMass, chrGrade, strProduceCoce, "Cash Crop", intWeekOfDelivery));
                 System.out.print("\nGreen Tea harvest, ");
                 break;
         }
 
         int index = HarvestLog.deliveries.size() -1 ;
-        System.out.println(HarvestLog.deliveries.get(index).getDeliveryId() + " has been recorded.");
+        System.out.println(HarvestLog.deliveries.get(index).getDeliveryID() + " has been recorded.");
 
         return;
     }

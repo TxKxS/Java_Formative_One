@@ -4,8 +4,8 @@ public abstract class crop{
     private static int nextId = 0;
 
     //abstract
-    private String strDeliveryID;
-    private String strMemberId;
+    private String strDeliveryID = "";
+    private String strMemberID;
     private String strMemberName;
     private float fltWeight = 0;
     private char chrGrade = 'Z';
@@ -14,21 +14,21 @@ public abstract class crop{
     private int intDeliveryWeek = 0;
     private double dbNetPayableAmount = 0.0;
 
-    public crop(String strMemberId, String strMemberName ,float Weight, char Grade, String ProduceCode, String Category,  int intDeliveryWeek) {
+    public crop(String MemberID, String MemberName ,float Weight, char Grade, String ProduceCode, String Category,  int DeliveryWeek) {
             nextId++;
-            this.strDeliveryID = getDeliveryId();
-            this.strMemberId = strMemberId;
-            this.strMemberName = strMemberName;
+            this.strDeliveryID = createDeliveryID();
+            this.strMemberID = MemberID;
+            this.strMemberName = MemberName;
             this.fltWeight = Weight;
             this.chrGrade = Grade;
             this.strProduceCode = ProduceCode;
             this.strCategory = Category;
-            this.intDeliveryWeek = intDeliveryWeek;
+            this.intDeliveryWeek = DeliveryWeek;
     }
 
-    public String getDeliveryId() {
+    public String createDeliveryID() {
 
-        strDeliveryID = Integer.toString(this.nextId); //converts to string
+        strDeliveryID = Integer.toString(nextId); //converts to string
 
         //adds 0s at the wrong to make it 4 digits
         while (strDeliveryID.length() < 4) {
@@ -40,7 +40,11 @@ public abstract class crop{
         return strDeliveryID;
     }
 
-    public String getMemberId() {return this.strMemberId;}
+    public String getDeliveryID() {
+        return strDeliveryID;
+    }
+
+    public String getMemberID() {return this.strMemberID;}
 
     public String getMemberName() {return this.strMemberName;}
 

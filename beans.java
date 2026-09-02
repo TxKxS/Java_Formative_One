@@ -1,7 +1,7 @@
 public class beans extends crop {
 
-    public beans(float Weight, char Grade, String ProduceCode, String Category, int intDeliveryWeek) {
-        super(Weight,Grade, ProduceCode,Category, intDeliveryWeek);
+    public beans(String strMemberID, String strMemberName ,float Weight, char Grade, String ProduceCode, String Category,  int intDeliveryWeek) {
+        super(strMemberID, strMemberName, Weight, Grade, ProduceCode, Category, intDeliveryWeek);
     }
 
     @Override

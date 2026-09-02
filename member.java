@@ -18,8 +18,7 @@ public class member {
         return this.strMemberName;
     }
 
-    public double setNewTotal(double dbAmount) {
-
+    public void setNewTotal(double dbAmount) {
         this.dbTotal+= dbAmount;
     }
 
