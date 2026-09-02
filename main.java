@@ -25,7 +25,7 @@ public class main {
                     } else {System.out.println("No deliveries recorded yet");}
                     break;
                 case '3':
-
+                    SeasonReport.writeToFile();
                     break;
                 case '4':
                     System.out.print("Thank you for using TKS's program!");
