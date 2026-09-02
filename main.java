@@ -19,7 +19,7 @@ public class main {
                     break;
                 case '2':
                     TotalPerMember.display();
-
+                    weeklyVolumeGrid.display();
                     break;
                 case '3':
 

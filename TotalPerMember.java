@@ -10,10 +10,7 @@ public class TotalPerMember {
         // Outputing the list
         System.out.println("Total payment per member (MUR)\n");
         for (member m : memberList.memberList) {
-            System.out.println(m.getMemberID() + " - " + m.getMemberName() +" - " + m.getTotal());
+            System.out.println(m.getMemberID() + " - " + m.getMemberName() +" - " + String.format("%.2f",m.getTotal()));
         }
-
-
-
     }
 }
