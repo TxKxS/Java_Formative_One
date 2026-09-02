@@ -15,9 +15,10 @@ public class main {
                 case '1':
                     delivery.delivery(input);
                     payment.payment();
-
+                    System.out.println("Member details updated\n");
                     break;
                 case '2':
+                    TotalPerMember.display();
 
                     break;
                 case '3':
