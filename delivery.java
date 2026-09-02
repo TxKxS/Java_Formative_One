@@ -118,7 +118,7 @@ public class delivery{
         switch (strProduceCoce) {
             case "MZE":
 
-                HarvestLog.deliveries.add(new maize(fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
+                HarvestLog.deliveries.add(new maize(strMemberId, strMemberName ,fltMass, chrGrade, strProduceCoce, "Cereal", intWeekOfDelivery));
                 System.out.print("\nMaize harvest, ");
                 break;
 

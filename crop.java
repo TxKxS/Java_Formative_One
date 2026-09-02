@@ -5,6 +5,8 @@ public abstract class crop{
 
     //abstract
     private String strDeliveryID;
+    private String strMemberId;
+    private String strMemberName;
     private float fltWeight = 0;
     private char chrGrade = 'Z';
     private String strProduceCode = "None";
@@ -12,10 +14,11 @@ public abstract class crop{
     private int intDeliveryWeek = 0;
     private double dbNetPayableAmount = 0.0;
 
-    public crop(float Weight, char Grade, String ProduceCode, String Category,  int intDeliveryWeek) {
+    public crop(String strMemberId, String strMemberName ,float Weight, char Grade, String ProduceCode, String Category,  int intDeliveryWeek) {
             nextId++;
             this.strDeliveryID = getDeliveryId();
-
+            this.strMemberId = strMemberId;
+            this.strMemberName = strMemberName;
             this.fltWeight = Weight;
             this.chrGrade = Grade;
             this.strProduceCode = ProduceCode;
@@ -37,17 +40,21 @@ public abstract class crop{
         return strDeliveryID;
     }
 
+    public String getMemberId() {return this.strMemberId;}
+
+    public String getMemberName() {return this.strMemberName;}
+
     public int getPrice(){return 0;}
 
     public char getGrade(){return this.chrGrade;}
 
-    public float getWeight(){ return this.fltWeight; }
+    public float getWeight(){ return this.fltWeight;}
 
     public String getProduceCode(){return this.strProduceCode;}
 
     public String getCategory(){return this.strCategory;}
 
-    public  int getDeliveryWeek(){return this.intDeliveryWeek; }
+    public  int getDeliveryWeek(){return this.intDeliveryWeek;}
 
     public void setNetPayableAmount(double NetPayableAmount){
         this.dbNetPayableAmount = NetPayableAmount;
