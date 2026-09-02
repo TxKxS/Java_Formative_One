@@ -17,12 +17,12 @@ public class delivery{
         //Record Member ID
         System.out.print("Member Identifier: ");
         String strMemberId = input.next();
+        input.nextLine();
 
         while (!memberIDCheck(strMemberId)) {
             System.out.println("Invalid Member ID");
             System.out.print("Please enter correct Member Identifier: ");
-            strMemberId = input.next();
-            input.nextLine(); //empty lines
+            strMemberId = input.nextLine();
         }
 
 

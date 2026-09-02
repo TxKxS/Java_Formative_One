@@ -18,8 +18,11 @@ public class main {
                     System.out.println("Member details updated\n");
                     break;
                 case '2':
-                    TotalPerMember.display();
-                    weeklyVolumeGrid.display();
+                    if (HarvestLog.deliveries.size() != 0) {
+                        TotalPerMember.display();
+                        weeklyVolumeGrid.display();
+                        topFive.display();
+                    } else {System.out.println("No deliveries recorded yet");}
                     break;
                 case '3':
 

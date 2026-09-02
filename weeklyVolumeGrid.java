@@ -9,7 +9,7 @@ public class weeklyVolumeGrid {
 
         for (crop c : HarvestLog.deliveries) {
             i = c.getDeliveryWeek() - 1; // Oth indexing so all numbers is always 2 less
-            switch (c.getCategory()) {
+            switch (c.getProduceCode()) {
                 case "MZE":
                     j = 0;
                     break;
